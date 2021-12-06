@@ -17,7 +17,7 @@ Mac で C# 開発するためのサンプル。
 
 ```sh
 cd HelloWorld
-dotnet run # 実行(ビルドも走る)
+dotnet run --framework net5.0 # 実行(ビルドも走る)
 dotnet build # Debug版が生成される
 dotnet publish -c Release -o out # outディレクトリにRelease版成果物を生成
 dotnet ./out/HelloWorld.dll # 成果物を実行
