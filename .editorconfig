@@ -1,0 +1,33 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = false
+
+[*.{cs}]
+### StyleCop Ignore ###
+
+# 各警告(CheckID)の詳細については下記参照
+# r[StyleCopAnalyzers/documentation at master · DotNetAnalyzers/StyleCopAnalyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/tree/master/documentation)
+
+# PrefixLocalCallsWithThis
+dotnet_diagnostic.SA1101.severity = none
+# UsingDirectivesMustBePlacedCorrectly
+dotnet_diagnostic.SA1200.severity = none
+# FieldNamesMustNotBeginWithUnderscore
+dotnet_diagnostic.SA1309.severity = none
+# PropertySummaryDocumentationMustMatchAccessors
+dotnet_diagnostic.SA1623.severity = none
+# DocumentationTextMustEndWithAPeriod
+dotnet_diagnostic.SA1629.severity = none
+# FileMustHaveHeader
+dotnet_diagnostic.SA1633.severity = none
+# ConstructorSummaryDocumentationMustBeginWithStandardText
+dotnet_diagnostic.SA1642.severity = none

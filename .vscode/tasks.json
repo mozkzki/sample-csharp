@@ -1,0 +1,126 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build [all]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "build",
+        // // Ask dotnet build to generate full paths for file names.
+        // "/property:GenerateFullPaths=true",
+        // // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+        // "/consoleloggerparameters:NoSummary",
+        "HelloWorld"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    {
+      "label": "build [net5.0]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": ["build", "-f", "net5.0", "HelloWorld"],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "run [net5.0]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": ["run", "-p", "./HelloWorld", "-f", "net5.0"],
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    {
+      "label": "run [netcoreapp3.1]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": ["run", "-p", "./HelloWorld", "-f", "netcoreapp3.1"],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    {
+      "label": "publish [net5.0]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "publish",
+        "-c",
+        "Release",
+        "-o",
+        "./HelloWorld/out/net5.0",
+        "-f",
+        "net5.0",
+        "./HelloWorld"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    {
+      "label": "publish [netcoreapp3.1]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": [
+        "publish",
+        "-c",
+        "Release",
+        "-o",
+        "./HelloWorld/out/netcoreapp3.1",
+        "-f",
+        "netcoreapp3.1",
+        "./HelloWorld"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    {
+      "label": "execute [net5.0]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": ["HelloWorld/out/net5.0/HelloWorld.dll"],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    },
+
+    {
+      "label": "execute [netcoreapp3.1]",
+      "command": "dotnet",
+      "type": "shell",
+      "args": ["HelloWorld/out/netcoreapp3.1/HelloWorld.dll"],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}
